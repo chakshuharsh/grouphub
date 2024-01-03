@@ -2,6 +2,7 @@ package com.example.grouphub.Entity
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
 @Entity(tableName="Messages",
@@ -21,7 +22,12 @@ ForeignKey(
     )
 
 
-]
+],
+    indices = [
+
+        Index(value=["groupId"]),
+
+    ]
 )
 data class MessageEntity(
     @PrimaryKey(autoGenerate = true)
